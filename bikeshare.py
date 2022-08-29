@@ -19,7 +19,7 @@ def get_filters():
     # TO DO: get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
     city = input('CHOOSE A CITY: ')
     while city not in ['chicago', 'new york city', 'washington']:
-        city = input("CHOOSE A CITY BETWEEN chicago, new york city OR washington: ").lower()
+        city = input("Mind the spelling and CHOOSE A CITY BETWEEN chicago, new york city OR washington: ").lower()
 
     # TO DO: get user input for month (all, january, february, ... , june)
     month = input('CHOOSE MONTH: ').lower()
