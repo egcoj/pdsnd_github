@@ -31,3 +31,6 @@ bikeshare.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+# Gold mines for learning (beside all Udacity materials)
+https://devdojo.com/
+https://git-scm.com/
