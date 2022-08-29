@@ -24,7 +24,10 @@ Submission
 To complete this project, you will provide all the Git commands you used throughout this course in this template along with a link to your repository on GitHub.
 
 ### Files used
-Include the files used
+chicago.csv
+new_york_city.csv
+washington.csv
+bikeshare.py
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
