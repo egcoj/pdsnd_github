@@ -30,7 +30,7 @@ def get_filters():
     day = input("CHOOSE A DAY BETWEEN:all, monday, tuesday, wednesday, thursday, friday, saturday, sunday: " ).lower()
     while day not in ['all', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']:
         day = input("CHOOSE A VALID DAY OR all FOR ALL OF THEM:").lower()
-        
+
     print('-'*40)
     return city, month, day
 
@@ -47,18 +47,18 @@ def load_data(city, month, day):
         df - Pandas DataFrame containing city data filtered by month and day
     """
     df = pd.read_csv(CITY_DATA[city])
-    
+
     df['Start Time'] = pd.to_datetime(df['Start Time'])
     df['End Time'] = pd.to_datetime(df['End Time'])
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
-    
+
     if month != 'all':
         months = ['january', 'february', 'march', 'april', 'may', 'june']
         month = months.index(month) + 1
-        
+
         df = df[df['month'] == month]
-    
+
     if day != 'all':
         df = df[df['day_of_week'] == day.title()]
 
@@ -67,7 +67,7 @@ def load_data(city, month, day):
 
 def time_stats(df):
     """Displays statistics on the most frequent times of travel."""
-            
+
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -139,18 +139,18 @@ def trip_duration_stats(df):
     # TO DO: display mean travel time
     Mean_Travel_Time = round(df['Trip Duration'].mean() / 60)
     print('Average travel time: ', Mean_Travel_Time, ' minutes')
-    
+
     # TO DO: display longest trip time and details
     Longest_trip_duration = round(df['Trip Duration'].max() / 60)
     print('\nLongest trip time: ', Longest_trip_duration, ' minutes')
     print(df.loc[df['Trip Duration'] == df['Trip Duration'].max(),['Trip Duration','Start Station', 'End Station']])
     print("\n")
-    
+
     # TO DO: display shortest trip time and details
     Shortest_trip_duration = round(df['Trip Duration'].min() / 60)
     print('Shortest trip time: ', Shortest_trip_duration, ' minutes')
     print(df.loc[df['Trip Duration'] == df['Trip Duration'].min(),['Trip Duration','Start Station', 'End Station']])
-    
+
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
@@ -191,7 +191,7 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-    
+
 def view_raw_data(df):
     view_raw_data = input("\nDO YOU WANT TO VISUALISE THE FIRST 5 LINES OF RAW DATA? PLEASE CHOOSE yes OR no :").lower()
     start_line = 0
@@ -199,7 +199,7 @@ def view_raw_data(df):
         print(df.iloc[start_line:start_line + 5])
         start_line += 5
         view_raw_data = input("\nDO YOU WANT TO VISUALISE THE NEXT 5 LINES OF RAW DATA? PLEASE CHOOSE yes OR no :").lower()
-    
+
     return df
 
 def main():
@@ -218,3 +218,5 @@ def main():
 
 if __name__ == "__main__":
         main()
+
+# Check my Github profile: https://github.com/egcoj
