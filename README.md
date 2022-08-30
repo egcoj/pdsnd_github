@@ -36,3 +36,7 @@ https://devdojo.com/
 https://git-scm.com/
 https://docs.github.com/en
 https://rubygarage.org/blog/most-basic-git-commands-with-examples
+
+### Contact details
+Eugenia Gabriela Cojocaru
+eugeniagabrielacojocaru@gmail.com
